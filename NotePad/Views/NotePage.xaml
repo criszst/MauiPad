@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:NotePad.Models"
              x:Class="NotePad.Views.NotePage"
              Title="NotePage">
+
+    <ContentPage.BindingContext>
+        <models:NotePage/>
+    </ContentPage.BindingContext>
     <VerticalStackLayout>
         <Editor x:Name="txtEditor"
-                Placeholder="Escreva a sua nota"
+                Placeholder="{Binding editorPlaceholder}"
                 HeightRequest="100" />
 
         <Grid ColumnDefinitions="*, *" ColumnSpacing="4">
